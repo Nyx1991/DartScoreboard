@@ -1,0 +1,887 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{268C188F-A8CB-4825-872C-3BDEA653FA83}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>DartScoreboard</RootNamespace>
+    <AssemblyName>DartScoreboard</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="PlayerPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ScoreboardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ScoreboardForm.Designer.cs">
+      <DependentUpon>ScoreboardForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestForm.Designer.cs">
+      <DependentUpon>TestForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WebServer.cs" />
+    <EmbeddedResource Include="PlayerPanel.resx">
+      <DependentUpon>PlayerPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScoreboardForm.resx">
+      <DependentUpon>ScoreboardForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestForm.resx">
+      <DependentUpon>TestForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\ad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\ae.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\af.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\ag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\ai.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\al.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\am.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\ao.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\aq.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\ar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\as.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\at.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\au.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\aw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\ax.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\az.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\ba.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\bb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\bd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\be.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\bf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\bh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\bi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\bj.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\bl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\bm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\bn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\bo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\bq.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\br.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\bs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\bt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\bv.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\bw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\by.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\bz.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\ca.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\cc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\cd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\cf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\cg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\ch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\ci.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\ck.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\cl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\cm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\cn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\co.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\cr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\cu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\cv.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\cw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\cx.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\cy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\cz.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\de.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\dj.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\dk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\dm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\do.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\dz.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\ec.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\ee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\eg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\eh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\er.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\es.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\et.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\fi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\fj.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\fk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\fm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\fo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\fr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\ga.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\gb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\gb-eng.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\gb-nir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\gb-sct.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\gb-wls.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\gd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\ge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\gf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\gg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\gh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\gi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\gl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\gm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\gn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\gp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\gq.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\gr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\gs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\gt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\gu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\gw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\gy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\hk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\hm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\hn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\hr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\ht.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\hu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\id.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\ie.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\il.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\im.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\in.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\io.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\iq.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\ir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\is.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\it.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\je.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\jm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\jo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\jp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\ke.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\kg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\kh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\ki.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\km.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\kn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\kp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\kr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\kw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\ky.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\kz.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\la.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\lb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\lc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\li.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\lk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\lr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\ls.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\lt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\lu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\lv.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\ly.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\ma.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\mc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\md.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\me.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\mf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\mg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\mh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\mk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\ml.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\mm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\mn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\mo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\mp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\mq.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\mr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\ms.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\mt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\mu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\mv.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\mw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\mx.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\my.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\mz.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\na.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\nc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\ne.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\nf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\ng.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\ni.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\nl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\no.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\np.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\nr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\nu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\nz.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\om.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\pa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\pe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\pf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\pg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\ph.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\pk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\pl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\pm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\pn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\pr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\ps.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\pt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\pw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\py.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\qa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\re.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\ro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\rs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\ru.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\rw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\sa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\sb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\sc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\sd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\se.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\sg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\sh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\si.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\sj.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\sk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\sl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\sm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\sn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\so.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\sr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\ss.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\st.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\sv.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\sx.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\sy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\sz.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\tc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\td.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\tf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\tg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\th.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\tj.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\tk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\tl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\tm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\tn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\to.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\tr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\tt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\tv.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\tw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\tz.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\ua.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\ug.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\um.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\us.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\uy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\uz.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\va.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\vc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\ve.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\vg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\vi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\vn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\vu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\wf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\ws.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\xk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\ye.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\yt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\za.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\zm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Ressourcen\zw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="panelLegBackground.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="panelScoreBackground.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="panelSetBackground.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="headerBackgroud.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="playerBackground.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="indicator.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
