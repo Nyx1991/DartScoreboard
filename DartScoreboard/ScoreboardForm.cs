@@ -104,6 +104,7 @@ namespace DartScoreboard
                 }
 
                 panelFooter.Top = panelHeader.Height + (PlayersFlowLayout.Controls.Count * 50);
+                label11.Text = DateTime.Now.ToString("dd.MM.yyyy - HH:mm");
 
                 this.ResumeLayout(false);
                 this.PerformLayout();

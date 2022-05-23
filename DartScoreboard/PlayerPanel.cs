@@ -24,6 +24,9 @@ namespace DartScoreboard
         internal Panel panelPlayerBackground;
         internal Label labelPlayer;
         internal Panel panelPlayerIndicator;
+        internal Label labelAvg;
+        internal Label labelSetStart;
+        internal Label labelLegStart;
         internal PictureBox flag;
 
         public PlayerPanel()
@@ -45,8 +48,11 @@ namespace DartScoreboard
             this.labelLeg = new Label();
             this.panelSet = new Panel();
             this.labelSet = new Label();
+            this.labelAvg = new Label();
             this.panelPlayerBackground = new Panel();
             this.labelPlayer = new Label();
+            this.labelSetStart = new Label();
+            this.labelLegStart = new Label();
             this.panelPlayerIndicator = new Panel();
             this.flag = new PictureBox();
 
@@ -230,8 +236,49 @@ namespace DartScoreboard
             this.panelPlayerIndicator.BackgroundImage = Properties.Resources.indicator;
             this.panelPlayerIndicator.TabIndex = 18;
             // 
-            // PlayerPanel
+            // labelAvg
             // 
+            this.labelAvg.BackColor = System.Drawing.Color.Transparent;
+            this.labelAvg.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAvg.Location = new System.Drawing.Point(275, 16);
+            this.labelAvg.Name = "labelAvg";
+            this.labelAvg.Size = new System.Drawing.Size(44, 18);
+            this.labelAvg.TabIndex = 19;
+            this.labelAvg.Text = "0,00";
+            this.labelAvg.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelSetStart
+            // 
+            this.labelSetStart.BackColor = System.Drawing.Color.Transparent;
+            this.labelSetStart.Font = new System.Drawing.Font("Arial Black", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSetStart.ForeColor = System.Drawing.Color.Maroon;
+            this.labelSetStart.Location = new System.Drawing.Point(0, 5);
+            this.labelSetStart.Name = "labelSetStart";
+            this.labelSetStart.Size = new System.Drawing.Size(30, 40);
+            this.labelSetStart.TabIndex = 12;
+            this.labelSetStart.Text = "•";
+            this.labelSetStart.Visible = false;
+            this.panelSet.Controls.Add(labelSetStart);
+            // 
+            // labelLegStart
+            // 
+            this.labelLegStart.BackColor = System.Drawing.Color.Transparent;
+            this.labelLegStart.Font = new System.Drawing.Font("Arial Black", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLegStart.ForeColor = System.Drawing.Color.Maroon;
+            this.labelLegStart.Location = new System.Drawing.Point(0, 5);
+            this.labelLegStart.Name = "labelLegStart";
+            this.labelLegStart.Size = new System.Drawing.Size(30, 40);
+            this.labelLegStart.TabIndex = 12;
+            this.labelLegStart.Text = "•";
+            this.labelLegStart.Visible = false;
+            this.panelLeg.Controls.Add(labelLegStart);
+            // 
+            // PlayerPanel
+            //
+
+            this.panelPlayerBackground.Controls.Add(this.flag);
+            this.panelPlayerBackground.Controls.Add(this.labelAvg);
+
             this.Controls.Add(this.panelFirstDartFinish);
             this.Controls.Add(this.panelSecondDartFinish);
             this.Controls.Add(this.panelThirdDartFinish);
@@ -241,12 +288,14 @@ namespace DartScoreboard
             this.Controls.Add(this.panelPlayerBackground);
             this.Controls.Add(this.panelPlayerIndicator);
             this.Controls.Add(this.flag);
+            
             this.Location = new System.Drawing.Point(16, 247);
             this.Margin = new Padding(0);
             this.Size = new System.Drawing.Size(1000, 50);
             this.TabIndex = 17;
 
             this.flag.BringToFront();
+            this.labelAvg.BringToFront();
 
             ((System.ComponentModel.ISupportInitialize)(this.flag)).EndInit();
             this.ResumeLayout(false);

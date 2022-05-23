@@ -125,7 +125,7 @@ namespace DartScoreboard
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Fuchsia;
-            this.ClientSize = new System.Drawing.Size(1003, 153);
+            this.ClientSize = new System.Drawing.Size(1003, 262);
             this.Controls.Add(this.PlayersFlowLayout);
             this.Controls.Add(this.panelFooter);
             this.Controls.Add(this.panelHeader);

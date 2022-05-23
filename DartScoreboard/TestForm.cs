@@ -15,7 +15,6 @@ namespace DartScoreboard
         public TestForm()
         {
             InitializeComponent();
-
         }
     }
 }
